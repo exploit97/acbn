@@ -35,16 +35,16 @@
         
         <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
            
-            <div id="home" class="first-section" style="background-image:url({{post.post_image.url }});">
+            <div id="home" class="first-section" style="background-image:url({{post.post_image.url }}); ">
               
                 <div class="dtab">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
                                 <div class="big-tagline">
-                                    <br>
+                                 
+                                    <h2>{{ post.title }}</h2>
                                     <a href="{% url 'blogs:post_detail' post.id %}"><p class="lead">{{post.snippet|truncatewords:100}} </p></a>
-                                       
                                        
                                        
                                 </div>

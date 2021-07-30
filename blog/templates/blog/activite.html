@@ -9,26 +9,27 @@
 <section id="overviews" class="section wb">
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9">
+    
      {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
      
     <a href="{% url 'blogs:create_post' %}"><button type="button" class="btn btn-info">Ajouter une Activité</button></a>
       {% endif %} 
     <br/><br/>
        <!--blog post-->
+       <div class="row">
     {% if posts %}
   
         {% for post in posts %}
        
-          
-        <div class="blog-post">
+       
+          <div class="col-lg-4 blog-post"> 
+       
          
             {% if post.post_image %}
             <img src="{{post.post_image.url }}" style="height: 200px; width: 350px;"/>
             {% endif %}
           <h3>{{ post.title }}</h3>
-          <h3>{{ post.text|truncatewords:30 }}</h3>
+          <h3>{{ post.text|truncatewords:10 }}</h3>
        
           
           <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Read More</a>
@@ -53,7 +54,7 @@
       
 
     </div>
-  </div>
+
 </section>
 <!-- Page end -->
 

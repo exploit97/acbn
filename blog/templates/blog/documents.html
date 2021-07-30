@@ -7,29 +7,27 @@
 <!-- Page  -->
 
 <section id="overviews" class="section wb">
-
+ 
+    
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9">
-     {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
+    {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
      
     <a href="{% url 'blogs:add_doc' %}"><button type="button" class="btn btn-info">Ajouter un document</button></a>
       {% endif %} 
     <br/><br/>
+    <div class="row ">
        <!--blog post-->
-    {% if documents %}
+     {% if documents %}
   
-        {% for post in documents %}
+     {% for post in documents %}
+      <div class="col-lg-4 blog-post">
+    
       
-        <div class="blog-post">
-         
-         
-          
-          <h3>{{ post.title }}</h3>
-         
+          <h3><a href="{{ post.doc_file.url }}">{{ post.title }}</a></h3>
+          <br><a href="{{ post.doc_file.url }}" download>Telecharger</a>     ||  <strong> <a href="#">Lire</a></strong>
        
           
-          <a href="#" class="btn btn-primary">Read More</a>
+        
          {% if request.user.is_authenticated %}
          {% if request.user.profile.is_teacher == True %}
           {% if user.id == post.author.id %}
@@ -37,20 +35,23 @@
           {% endif %}
           {% endif %}
           {% endif %}
-        </div>
+    </div>
+        
+     
         {% endfor %}
+
         {% else %} 
 
 <p>Aucun document, désolé!!!</p>
         {% endif %}
-    
+     </div>
      
   
       </div>
       
 
-    </div>
-  </div>
+  
+
 </section>
 <!-- Page end -->
 
