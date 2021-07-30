@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+{% if request.user.is_authenticated %}
+    {% if request.user.profile.is_teacher == True %}
+        <h1>Créer un post</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+        <!--   <label for="">Title*</label>
+            <input type="text" class="form-control" name="title" placeholder="Titre de l'article...">
+            <label for="">Article*</label>
+            <textarea class="form-control" name="text" id="" cols="30" rows="10" placeholder="Publier un contenu..."></textarea>
+            <label for="Categorie">Categorie*</label>
+            <select class="form-control" >
+                {% if choice_list%}
+                {% for categorie in choice_list %}
+            <option value= cat ="categorie_{{categorie}}">{{ categorie }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+            <label for="">Snippet*</label>
+            <textarea class="form-control" name="snippet" id="" cols="30" rows="5""></textarea> 
+            <br/>
+             -->
+           
+            <button class="site-btn">Créer le message</button>
+           
+        </form>
+
+    <br>
+    
+    <a href="{% url 'blogs:add_categorie' %}"><button class="site-btn" class="site-btn">Créer une nouvelle catégorie</button></a>
+    
+    <br/>
+  
+  
+{% endif %}
+  
+{% endif %}           
+        
+{% endblock %}

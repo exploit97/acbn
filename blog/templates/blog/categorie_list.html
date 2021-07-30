@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+       <!--blog categories list-->
+       <h1>blog categories</h1>
+       {% if categorie_list_view %}
+             {% for item in categorie_list_view %}
+             
+                 
+            <h4> <a  href="{% url 'blogs:same_categorie_list' item %}">
+						
+                {{ item }}
+            </a>  </h4>    
+     
+             {% endfor %}
+        
+        
+        {% else %} 
+
+<p>Aucun post, désolé!!!</p>
+        {% endif %}
+    
+     
+  
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+<!-- Page end -->
+
+{% endblock content %}

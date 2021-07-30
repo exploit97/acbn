@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% load account socialaccount %}
+{% block content %}
+<div id="overviews" class="section wb">
+    <div class="container">
+        <div class="section-title row text-center">
+            <div class="col-md-8 offset-md-2">
+                <h3>Genèse</h3>
+                <p class="lead"> Nous sommes une plateforme de préparation d'examen et concours, Nous accompagnons et orientons les élèves et étudiants tout au long de leur cursus accadémique. Notre siège social se trouve  à Brazzaville, République du Congo.</p>
+            </div>
+        </div><!-- end title -->
+    
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="message-box">
+                    <h4>2020 Lancement de la plateforme Schooli par l'exploit Lothar</h4>
+                    <h2>Bienvenu à SchooliEducation</h2>
+                    <p>Vous y trouverez  les épreuves des examens et concours corrigés et de nombreux sujets et exercices de prépartion pour les différents concours et examens, Nous sommes disponible dans plusieurs pays d'afrique, notament dans toute l'Afrique centrale</p>
+
+                    <p> Nous vous aidons à reuissir votre parcours accadémique. </p>
+
+                    <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+            
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="post-media wow fadeIn">
+                    <img src="{% static 'schooli/images/about_02.jpg' %}" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+        </div>
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="post-media wow fadeIn">
+                    <img src="{% static 'schooli/images/about_03.jpg' %}" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+            
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="message-box">
+                    <h2>Regoignez nous dans nos Centres de formations.</h2>
+                    <p>Nous disposant des centres de formations à Brazzaville et à pointe-Noire, deux villes de la république du Congo. Nous disposons aussi des cours en ligne.</p>
+
+                    <p> Vous pouvez passer des tests en ligne sur notre plateforme pour jauger votre niveau dans le rythme qui vous convient..</p>
+
+                    <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+{% endblock %}
+
+

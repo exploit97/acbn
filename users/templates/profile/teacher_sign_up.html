@@ -1,0 +1,74 @@
+{% extends 'base.html'  %}
+
+{% block title %} | Compte enseignant {% endblock %}  
+
+{% block content  %}
+
+<section id="register" class="bg-light py-5">
+  <div>
+ 
+
+  <!-- signup section -->
+  {% if request.user.profile.is_teacher%}
+    <h1 class="text-center">Votre compte dispose du droit de enseignant</h1><br>
+    <p class="text-center">
+      En ayant un compte agent, vous avez déjà un accès complet à cette plateforme. Vous pouvez : </p>
+  
+    <div data-aos="fade-right" class="row mt-4 mb-4 bg-light">
+      <div class="col-md-4 text-center">
+        <h3 class="p-4">Vous pouvez ajouter des Activités</h3> 
+        <a href="#" class="btn btn-outline-primary m-4">Ajouter des documents</a>
+      </div>
+    </div>
+      
+      
+    </div>
+    {% else %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">Compte Enseignant</div>
+             <form action="{% url 'users:demande' %}" method="post" class="signup-form">
+                {% csrf_token  %}
+                <!-- Secure Data -->
+              <div class="form-group">
+              <label for="name"> Nom</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone_number"> Phone</label>
+              <input type="text" name="phone_number" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+           
+            <button class="site-btn">
+              Soumettre la demande</button>
+          </form>
+             
+        </div>
+      </div>
+    </div>
+ 
+
+    </div>
+
+{% endif %}
+<!-- signup section end -->
+        
+  </section>
+
+
+{% endblock  %}
+
+
+
+    
+
+
+
+
+

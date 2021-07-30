@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+{% block content %}
+
+
+<div id="overviews" class="section wb">
+    <div class="container">
+        <div class="row"> 
+            <div class="col social_style col-lg-12">
+                <div style="justify-content: center; " >
+                  <ul class="social-icons" >
+                    <li><a  href="{%url 'blogs:about'%}" target="_blank" >Une association à but non lucratif des cadres,d'étudiants et de professionnels mobilisés autour d'une idéologie commune,celle de contribuer au bien-être des autres par l'action humanitaire</a></li>
+                   
+                   
+                
+                  </ul></div>
+                 
+              </div>
+
+            <div class="col-lg-12">
+<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" style="height: 30%;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+        {% if posts %}
+        {% for post in posts %}
+        
+        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+           
+            <div id="home" class="first-section" style="background-image:url({{post.post_image.url }});">
+              
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <div class="big-tagline">
+                                    <br>
+                                    <a href="{% url 'blogs:post_detail' post.id %}"><p class="lead">{{post.snippet|truncatewords:100}} </p></a>
+                                       
+                                       
+                                       
+                                </div>
+                            </div>
+                        </div><!-- end row -->            
+                    </div><!-- end container -->
+                </div>
+            </div><!-- end section -->
+
+        </div>
+        {% endfor %}
+{% else %}
+
+
+
+
+        <div class="carousel-item active">
+            <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-1.jpg' %});">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                         
+
+                            <div class="col-md-12 col-sm-12 text-right">
+                                <div class="big-tagline">
+                                   
+                                    <h2><strong>ACBN </strong> Une association à but non lucratif</h2>
+                                    <p class="lead">Nous disposons d'une gamme des épreuves corrigeés des examens et concours. </p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div><!-- end row -->            
+                    </div><!-- end container -->
+                </div>
+            </div><!-- end section -->
+        </div>
+        <div class="carousel-item">
+            <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-2.jpg' %});">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-left">
+                                <div class="big-tagline">
+                                    <h2 data-animation="animated zoomInRight">Schooli <strong>Plateforme d'éducation</strong></h2>
+                                    <p class="lead" data-animation="animated fadeInLeft">Nous disposons d'une gamme des épreuves corrigeés des examens et concours.. </p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div><!-- end row -->            
+                    </div><!-- end container -->
+                </div>
+            </div><!-- end section -->
+        </div>
+        <div class="carousel-item">
+            <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-3.jpg' %}); ">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <div class="big-tagline">
+                                    <h2 data-animation="animated zoomInRight"><strong>VPS Servers</strong> Company</h2>
+                                    <p class="lead" data-animation="animated fadeInLeft">Nous disposons d'une gamme des épreuves corrigeés des examens et concours.</p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div><!-- end row -->            
+                    </div><!-- end container -->
+                </div>
+            </div><!-- end section -->
+        </div>
+        {% endif %}
+
+        <!-- Left Control -->
+        <a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <!-- Right Control -->
+        <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="col social_style col-lg-12">
+    <div style="justify-content: center; " >
+      <ul class="social-icons" >
+        <li><a  href="{%url 'blogs:activite'%}" target="_blank" >Découvrez de nombreuses activités des Congolais au Niger</a></li>
+       
+       
+    
+      </ul></div>
+     
+  </div>
+
+<div id="overviews" class="section wb">
+    <div class="container" id="about">
+       
+    
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="message-box">
+                   
+                    <h2>A PROPOS DE NOUS</h2>
+                    <p>Bienvenue sur le site des Congolais du Niger!
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                    </p>
+                    <p>Bienvenue sur le site des Congolais du Niger!
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                        lorem ipsim hdgf shuks ddi sgsu, sksuze. sgsj 
+                     
+                    </p>
+
+                 
+
+                    <a href="#" class="hover-btn-new orange"><span>Lire</span></a>
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+            
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="post-media wow fadeIn">
+                    <img src="{% static 'schooli/images/acbn1.jpg' %}" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+        </div>
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="post-media wow fadeIn">
+                    <img src="{% static 'schooli/images/acbn2.jpg' %}" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+            
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="message-box">
+                    <h2>REGOIGNEZ NOUS DANS NOS ACTIVITES</h2>
+                    <p>Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk 
+                        Lorem ipsum lorem ipsum lorel ndshsk 
+                    </p>
+
+                    <p> Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk .</p>
+                    <a href="#" class="hover-btn-new orange"><span>Lire</span></a>
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+
+</div>
+
+      
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+{% endblock %}

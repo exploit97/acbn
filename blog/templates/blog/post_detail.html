@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="overviews" class="section wb">
+<div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+          <h1>Détails du message:</h1>
+        <!-- blog post -->
+        <div class="blog-post">
+          
+          <img src="{{ post.post_image.url }}" alt="mon_image" class="img-fluid">
+       
+          <h3>{{ post.title }}</h3>
+          <div class="blog-metas">
+            <div class="blog-meta author">
+              <div class="post-author set-bg" data-setbg="/media/{{ post.author.profile.profile_pic }}"></div>
+              <a href="#admin">{{ post.author|capfirst }}</a>
+            </div>
+            <div class="blog-meta">
+              <a href="#">{{ post.created_date }}</a>
+            </div>
+          </div>
+          <p>{{ post.text|capfirst|safe }} </p>
+          <a href="{% url 'blogs:post_list' %}" class="btn btn-dark">Revenir</a>
+          {% if post.author == request.user %}
+          <a href="{% url 'blogs:delete_post' post.id %}" class="btn btn-danger">Supprimer le message</a>
+
+          {% endif %}
+        <br>
+
+<hr>
+
+<form action="{% url 'blogs:like_view' post.pk %}" method="POST">
+  {% csrf_token %}
+  {% if Liked %}
+  <button type="submit" name="post_id" value="{{post.id}}" class="btn btn-danger btn-sm">Unlike</button> 
+
+{% else %}
+
+  <button type="submit" name="post_id" value="{{post.id}}" class="btn btn-primary btn-sm">Like</button> - {{ total_likes }} Likes
+</form>
+
+{% endif %}
+<br>
+<hr>
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-2">
+      <img src="{{ post.author.profile.profile_pic.url }}" class="card-img">
+    </div>
+<div class="col-md-10">
+  <div class="card-body">
+    <h5 class="card-title" id="admin">{{ post.author|capfirst }}</h5>
+    <p class="small text-muted">
+      <a href="{% url 'blogs:showProfileView' post.author.profile.pk %}">Profile |</a>
+      {% if post.author.profile.website_url %}
+        <a href="{{post.author.profile.website_url }}">Website</a> | 
+        {% endif %}
+        {% if post.author.profile.facebook_url %} <a href="{{post.author.profile.facebook_url }}">Facebook</a> |
+        {% endif %}
+        {% if post.author.profile.instagram_url %}<a href="{{post.author.profile.instagram_url }}">Instagram</a> | {% endif %}
+        {% if post.author.profile.twitter_url %}<a href="{{post.author.profile.twitter_url }}">Twitter</a> |{% endif %}
+        {% if post.author.profile.linkedin_url %}<a href="{{post.author.profile.linkedin_url }}"> LinkedIn</a> {% endif %}</p>
+    <p class="card-text">{{post.author.profile.bio }}</p>
+   
+    
+
+
+</div>
+
+</div>
+</div>
+</div>
+<hr>
+<h2> Commentaires </h2>
+{% if not post.comments.all %}
+Aucun commentaire... <a href="{% url 'blogs:add_comment_section' post.id %}">Ajouter un commentaire</a>
+{% else %}
+<a href="{% url 'blogs:add_comment_section' post.id %}">Ajouter un commentaire </a>
+<br> <br>
+{% for comment in post.comments.all %}
+<strong>{{ comment.name }}-
+  {{ comment.date_added }}</strong>
+  <br/>
+  {{ comment.text }}
+  <br><br>
+ {% endfor %} 
+ <a href="{% url 'blogs:add_comment_section' post.id %}">Ajouter un commentaire </a>
+ {% endif %}
+ 
+<br> <br>
+ <hr>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</section>
+{% endblock content %}
+

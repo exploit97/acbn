@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Page  -->
+<section class="blog-page spad pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+     
+
+       <!--blog categories post-->
+      
+       <h1>Catégorie : {{ cats }}</h1> 
+       {% if categorie_posts %}
+     {% for post in categorie_posts %}
+  
+      
+    <div class="blog-post">
+      <img src="{{ post.post_image.url }}" alt="mon_image" height="200" width="400">
+      <h3>{{ post.title }}</h3>
+      <div class="blog-metas">
+        <div class="blog-meta author">
+          <div class="post-author set-bg" data-setbg="/media/{{ post.author.profile.profile_pic }}"></div>
+          <a href="#">{{ post.author|capfirst }}</a>
+        </div>
+        <div class="blog-meta">
+          <a href="#">{{ post.created_date }}</a>
+          
+        </div>
+        <div>
+          <strong>Categorie :</strong>  <a href="{% url 'blogs:same_categorie_list' post.categorie|slugify %}">{{ post.categorie }}</a>
+      </div>
+    </div>
+      <p>{{ post.text|capfirst|truncatewords:100|safe }} </p>
+      <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Read More</a>
+      {% if request.user.is_authenticated %}
+         {% if request.user.profile.is_teacher == True %}
+      {% if user.id == post.author.id %}
+      <a href="{% url 'blogs:update_post' post.id %}" class="btn btn-info">Mettre à jour</a>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+    </div>
+    
+   {% endfor %}
+   {% else %}
+   <p>Aucun post, désolé!!!</p>
+       {% endif %}
+
+       
+    
+  
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+<!-- Page end -->
+
+{% endblock content %}

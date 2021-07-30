@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>ACBN</title>  
+    <meta name="keywords" content="ACBN">
+    <meta name="description" content="Association des Congolais de Brazzaville au Niger">
+    <meta name="author" content="ACBN">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'schooli/images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'schooli/images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'schooli/css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'schooli/css/style.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'schooli/css/versions.css ' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'schooli/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'schooli/css/custom.css' %}">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="{% static 'schooli/js/modernizer.js' %}"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="host_version"> 
+
+	<!-- Modal -->
+	
+
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+		<div class="loader-container">
+			<div class="progress-br float shadow">
+				<div class="progress__item"></div>
+			</div>
+		</div>
+	</div> -->
+	
+	<!-- END LOADER -->	
+			
+	<!-- Start header -->
+	<header class="top-navbar">
+		
+			<div class="container-fluid">
+        <div class="row" >
+<div class="col social_style">
+  <div style="justify-content: left; " >
+    <ul class="social-icons" >
+      <li><a  href="#" target="_blank" ><i class="fa fa-envelope"></i>bloufouma@gmail.com</a></li>
+      <li><a  href="#" target="_blank"><i class="fa fa-phone"></i>+1 434 422 207 5</a></li>
+     
+  
+    </ul></div>
+    <div  style="justify-content: right; " >
+    <ul class="social-icons"  >
+      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-facebook"></i></a></li>
+      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-instagram"></i></a></li>
+      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-linkedin"></i></a></li>
+      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-twitter"></i></a></li>
+      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-rss"></i></a></li>
+     
+
+    </ul>
+    </div>
+</div>
+        </div>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{%url 'blogs:home'%}">
+            <img src="{% static 'schooli/images/logo-acbn.png' %}" alt="ACBN" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              
+            </button>
+                
+            <div class="collapse navbar-collapse" id="navbars-host">
+              <ul class="navbar-nav ml-auto">
+              
+            
+            
+        
+              <li class="nav-item">
+                  <a class="nav-link" href="{%url 'blogs:home'%}">Acceuil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'blogs:about'%}">Présentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'blogs:activite'%}">Activités</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blogs:documents' %}">Documents</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blogs:partners' %}">Partenaires</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blogs:etudes' %}">Etudier au Niger</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blogs:contact' %}">Contacts</a>
+              </li>
+    
+             
+                
+                </ul>
+    
+                <ul class="navbar-nav ml-auto">
+                {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown">
+              
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{request.user.username}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdown-a">
+              <a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a>
+              <a class="dropdown-item" href="{% url 'account_logout' %}">Sortie</a>
+              </div>
+            
+            </li>
+            {% else %}
+          
+                            <li class="nav-item  dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"  data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> Mon compte </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                                               
+                                        <a class="dropdown-item" href="{% url 'account_login' %}" >
+                                            <span class="fa fa-user icon-min-width-20"></span>Se connecter
+                                        </a>
+                                    
+                                    
+                                        <a  class="dropdown-item" href="{% url 'account_signup' %}">
+                                            <span class="fa fa-user-plus icon-min-width-20"></span>Créer un compte
+                                        </a>
+                                      
+                                    
+                            </div>
+                                                              
+                        </li>
+    
+              {% endif %}
+            </ul>
+      
+          </nav>
+        </div>
+			
+				</div>	
+               
+		
+	
+	</header>
+
+	<!-- End header -->
+
+
+	
+    {% block content %}
+    
+    {% endblock %}
+		
+		
+		
+		
+			
+ <div class="section wb"></div>   
+                        
+<footer >
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-center">                   
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2020 <a href="#">acbn.assoc <a href="https://html.design/">exploit lothar</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+	</div><!-- end copyrights -->
+
+</footer>
+
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'schooli/js/all.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'schooli/js/custom.js' %}"></script>
+	<script src="{% static 'schooli/js/timeline.min.js' %}"></script>
+	<script>
+		timeline(document.querySelectorAll('.timeline'), {
+			forceVerticalMode: 700,
+			mode: 'horizontal',
+			verticalStartPosition: 'left',
+			visibleItems: 4
+		});
+	</script>
+			
+</body>
+</html>

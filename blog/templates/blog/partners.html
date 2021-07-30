@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Page  -->
+
+<section id="overviews" class="section wb">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+     {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
+     
+    <a href="{% url 'blogs:add_partner' %}"><button type="button" class="btn btn-info">Ajouter un partenaire</button></a>
+      {% endif %} 
+    <br/><br/>
+       <!--blog post-->
+    {% if partners %}
+  
+        {% for post in partners %}
+      
+        <div class="blog-post">
+         
+          <img src="{{ post.image.url }}" alt="mon_image" class="img-fluid">
+          
+          <h3>{{ post.name }}</h3>
+         
+          
+         
+         {% if request.user.is_authenticated %}
+         {% if request.user.profile.is_teacher == True %}
+          {% if user.id == post.author.id %}
+          <a href="{% url 'blogs:update_partner' post.id %}" class="btn btn-info">Mettre à jour</a>
+          <a href="{% url 'blogs:delete_partner' post.id %}" class="btn btn-info">Supprimer</a>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+        </div>
+        {% endfor %}
+        {% else %} 
+
+<p>Aucun post, désolé!!!</p>
+        {% endif %}
+    
+     
+  
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+<!-- Page end -->
+
+{% endblock content %}
+
+

@@ -1,0 +1,50 @@
+<div class="callback-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Envoyez nous votre  <em>devis</em></h2>
+            <span>Exprimer votre besoin et nous donnerons une tarification sur mesure</span>
+          </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="contact-form">
+                    <form id="contact" action="{% url 'blogs:devis' %}" method="post">
+                      {% csrf_token  %}
+                      <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                          <fieldset>
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                          <fieldset>
+                            <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                          </fieldset>
+                        </div>
+                       
+                        <div class="col-lg-12">
+                            <fieldset>
+                              <input name="adress" type="text" rows="6" class="form-control" id="adress" placeholder="votre adresse" required=""/>
+                            </fieldset>
+                          </div>
+
+                         
+
+                        <div class="col-lg-12">
+                            <fieldset>
+                              <textarea name="email_content" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                            </fieldset>
+                          </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <button type="submit" id="form-submit" class="filled-button">Envoyez</button>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

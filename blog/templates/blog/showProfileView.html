@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Profile de l'auteur </h1>
+
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-2">
+        <img src="{{ user_page.profile_pic.url }}" class="card-img">
+      </div>
+  <div class="col-md-10">
+    <div class="card-body">
+      <h5 class="card-title" id="admin">{{ user_page.user|capfirst }}</h5>
+      <p class="small text-muted">
+        
+        {% if user_page.website_url %}
+          <a href="{{user_page.website_url }}">Website</a> | 
+          {% endif %}
+          {% if user_page.facebook_url %} <a href="{{user_page.facebook_url }}">Facebook</a> |
+          {% endif %}
+          {% if user_page.instagram_url %}<a href="{{user_page.instagram_url }}">Instagram</a> | {% endif %}
+          {% if user_page.twitter_url %}<a href="{{user_page.twitter_url }}">Twitter</a> |{% endif %}
+          {% if user_page.linkedin_url %}<a href="{{user_page.linkedin_url }}"> LinkedIn</a> {% endif %}</p>
+      <p class="card-text">{{user_page.bio }}</p>
+     
+      
+  
+  
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}
