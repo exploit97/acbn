@@ -31,15 +31,17 @@ DEBUG = config('DEBUG', cast=bool)
 
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
-    ALLOWED_HOSTS = ['acbn.herokuapp.com']
+    ALLOWED_HOSTS = ['acbnassoc.herokuapp.com']
     
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-    STATIC_ROOT = BASE_DIR/'staticfiles'
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-    STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    
-]
+    # Extra places for collectstatic to find static files.
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, 'static'),
+    )
+   
 
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
