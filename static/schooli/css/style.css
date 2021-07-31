@@ -780,7 +780,7 @@ a img.aligncenter {
 }
 
 .big-tagline a.hover-btn-new:hover span {
-  color: #eea412;
+  color:blue;
 }
 
 .hover-btn-new::before {
@@ -3840,8 +3840,8 @@ a.link-style3 {
     transition: all 0.2s;
 }
 .tags li a:hover {
-	border-color: #eea412;
-	background: #eea412;
+	border-color: blue;
+	background:blue;
 	color: #ffffff;
 }
 
