@@ -31,31 +31,15 @@
 	body.host_version .stat-wrap h3{
 		margin-bottom: 12px;
 	}
-	.pricing-table-header h2{
-		font-size: 22px;
-	}
-	.pricing-table-features{
-		padding: 0px 0px 15px 0px;
-		margin: 15px 15px 0 15px;
-	}
-	.pricing-table-features p{
-		font-size: 13px;
-	}
+	
+	
 	.icon-wrapper h3{
 		clear: both;
 	}
 	.icon-wrapper p{
 		padding-left: 0px;
 	}
-	.pricingTable .heading > h3{
-		font-size: 28px;
-	}
-	.pricingTable .price-value{
-		font-size: 28px;
-	}
-	.pricingTable .pricingContent ul li{
-		font-size: 13px;
-	}
+	
 	.widget.server a{
 		padding: 10px 20px;
 	}
@@ -131,15 +115,7 @@
 	.message-box h2{
 		font-size: 24px;
 	}
-	.pricing-table{
-		margin-bottom: 40px;
-	}
-	.pricing-table-features{
-		padding: 0px 0px 10px 0px;
-	}
-	.testimonial h3{
-		font-size: 18px;
-	}
+	
 	.desc h3 i{
 		font-size: 28px;
 	}
@@ -184,9 +160,7 @@
 	.section{
 		padding: 40px 0;
 	}
-	.dmoain-pricing table th{
-		font-size: 14px;
-	}
+	
 	.contact_form{
 		margin-right: 0px;
 		margin-bottom: 30px;
@@ -268,15 +242,7 @@
 	.message-box h2{
 		font-size: 24px;
 	}
-	.pricing-table{
-		margin-bottom: 40px;
-	}
-	.pricing-table-features{
-		padding: 0px 0px 10px 0px;
-	}
-	.testimonial h3{
-		font-size: 18px;
-	}
+	
 	.desc h3 i{
 		font-size: 28px;
 	}
@@ -317,9 +283,7 @@
 	.section{
 		padding: 40px 0;
 	}
-	.dmoain-pricing table th{
-		font-size: 14px;
-	}
+	
 	.contact_form{
 		margin-right: 0px;
 		margin-bottom: 30px;

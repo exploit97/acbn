@@ -52,149 +52,187 @@
 	<!-- END LOADER -->	
 			
 	<!-- Start header -->
- 
-	<header class="top-navbar">
-		
-			<div class="container-fluid">
-        <div class="row" >
-<div class="col social_style">
-  <div style="justify-content: left; " >
-    <ul class="social-icons" >
-      <li><a  href="#" target="_blank" ><i class="fa fa-envelope"></i>bloufouma@gmail.com</a></li>
-      <li><a  href="#" target="_blank"><i class="fa fa-phone"></i>+1 434 422 207 5</a></li>
-     
-  
-    </ul></div>
-    <div  style="justify-content: right; " >
-    <ul class="social-icons"  >
-      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-facebook"></i></a></li>
-      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-instagram"></i></a></li>
-      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-linkedin"></i></a></li>
-      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-twitter"></i></a></li>
-      <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-rss"></i></a></li>
-     
+ <div class="container-fluid" >
+  <div class="row social_style" style="width: 100%; margin: auto;">
+    <div class="col-12 col-md-4">
 
-    </ul>
-    </div>
-</div>
-        </div>
-        <div class="row">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{%url 'blogs:home'%}">
-            <img src="#" alt="ACBN" />
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              
-            </button>
-                
-            <div class="collapse navbar-collapse" id="navbars-host">
-              <ul class="navbar-nav ml-auto">
-              
-            
-            
+      <ul class="social-icons" >
+        <li><a  href="#" target="_blank" ><i class="fa fa-envelope"></i>bloufouma@gmail.com</a></li>
+       
+       
+    
+      </ul></div>
+      <div class="col-6 col-md-4">
+
+        <ul class="social-icons">
         
-              <li class="nav-item">
-                  <a class="nav-link" href="{%url 'blogs:home'%}">Acceuil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'blogs:about'%}">Présentation</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'blogs:activite'%}">Activités</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogs:documents' %}">Documents</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogs:partners' %}">Partenaires</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogs:etudes' %}">Etudier au Niger</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogs:contact' %}">Contacts</a>
-              </li>
+          <li ><a  href="#" target="_blank"><i class="fa fa-phone"></i>+1 434 422 207 5</a></li>
+         
+      
+        </ul></div>
+      <div class="col-6 col-md-4"  >
+      <ul class="social-icons"  >
+        <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-facebook"></i></a></li>
+        <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-instagram"></i></a></li>
+        <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-linkedin"></i></a></li>
+        <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-twitter"></i></a></li>
+        <li><a  href="#" target="_blank" style="padding-right:10px;"><i class="fa fa-rss"></i></a></li>
+       
+    
+      </ul>
+      </div>
+    </div>
+    <div class="row" >    
+  <header class="top-navbar" style="width: 100%; margin: auto;">
+	
+     
+     
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{%url 'blogs:home'%}">
+          <img src="#" alt="ACBN" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button>
+              
+          <div class="collapse navbar-collapse" id="navbars-host">
+            <ul class="navbar-nav ml-auto">
+            
+          
+          
+      
+            <li 
+            {% if '/' == request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+         
+                <a class="nav-link" href="{%url 'blogs:home'%}">Acceuil</a>
+            </li>
+            <li 
+            {% if 'about' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{%url 'blogs:about'%}">Présentation</a>
+            </li>
+            <li 
+            {% if 'activite' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{%url 'blogs:activite'%}">Activités</a>
+            </li>
+            <li 
+            {% if 'documents' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{% url 'blogs:documents' %}">Documents</a>
+            </li>
+            <li {% if 'partners' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{% url 'blogs:partners' %}">Partenaires</a>
+            </li>
+            <li  {% if 'etudes' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{% url 'blogs:etudes' %}">Etudier au Niger</a>
+            </li>
+            <li {% if 'contact' in request.path %}
+            class="nav-item active"
+            {% else %}
+            class="nav-item"
+            {% endif %}>
+              <a class="nav-link" href="{% url 'blogs:contact' %}">Contacts</a>
+            </li>
+  
+           
+              
+              </ul>
+  
+              <ul class="navbar-nav ml-auto">
+              {% if request.user.is_authenticated %}
+          <li class="nav-item dropdown">
+            
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{request.user.username}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+            <a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a>
+            <a class="dropdown-item" href="{% url 'account_logout' %}">Sortie</a>
+            </div>
+          
+          </li>
+          {% else %}
+        
+                          <li class="nav-item  dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button"  data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> Mon compte </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                                             
+                                      <a class="dropdown-item" href="{% url 'account_login' %}" >
+                                          <span class="fa fa-user icon-min-width-20"></span>Connexion
+                                      </a>
+                                  
+                                  
+                                      <a  class="dropdown-item" href="{% url 'account_signup' %}">
+                                          <span class="fa fa-user-plus icon-min-width-20"></span>Inscription
+                                      </a>
+                                                
+                          </div>
+                                                            
+                      </li>
+  
+            {% endif %}
+          </ul>
+    
+        </nav>
+      </header>
+      </div>
+    
     
              
-                
-                </ul>
-    
-                <ul class="navbar-nav ml-auto">
-                {% if request.user.is_authenticated %}
-            <li class="nav-item dropdown">
-              
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{request.user.username}}
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdown-a">
-              <a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a>
-              <a class="dropdown-item" href="{% url 'account_logout' %}">Sortie</a>
-              </div>
-            
-            </li>
-            {% else %}
-          
-                            <li class="nav-item  dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"  data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> Mon compte </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                                               
-                                        <a class="dropdown-item" href="{% url 'account_login' %}" >
-                                            <span class="fa fa-user icon-min-width-20"></span>Se connecter
-                                        </a>
-                                    
-                                    
-                                        <a  class="dropdown-item" href="{% url 'account_signup' %}">
-                                            <span class="fa fa-user-plus icon-min-width-20"></span>Créer un compte
-                                        </a>
-                                      
-                                    
-                            </div>
-                                                              
-                        </li>
-    
-              {% endif %}
-            </ul>
-      
-          </nav>
-        </div>
-			
-				</div>	
-               
-		
-	
-	</header>
-
-	<!-- End header -->
+  <!-- End header -->
+   
 
 
-	
-    {% block content %}
-    
-    {% endblock %}
-		
-		
-		
-		
-			
- <div class="section wb"></div>   
-                        
+<!-- messages alerts -->
+
+{% include 'inc/messages.html' %}
+
+  {% block content %}
+  
+  {% endblock %}
+   
+                      
 <footer >
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-center">                   
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2020 <a href="#">acbn.assoc <a href="https://html.design/">exploit lothar</a></p>
-                </div>
-            </div>
-        </div><!-- end container -->
-	</div><!-- end copyrights -->
+  <div class="copyrights">
+      <div class="container">
+          <div class="footer-distributed">
+              <div class="footer-center">                   
+                  <p class="footer-company-name">All Rights Reserved. &copy; 2020 <a href="#">acbn.assoc <a href="https://acbnassoc.herokuapp.com/">exploit lothar</a></p>
+              </div>
+          </divactivite>
+      </div><!-- end container -->
+</div><!-- end copyrights -->
 
 </footer>
 
 
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+  </div>	
     <!-- ALL JS FILES -->
     <script src="{% static 'schooli/js/all.js' %}"></script>
     <!-- ALL PLUGINS -->

@@ -10,10 +10,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-12">
      {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
      
-    <a href="{% url 'blogs:create_post' %}"><button type="button" class="btn btn-info">Créer un post</button></a>
+    <a href="{% url 'blogs:create_post' %}"><button type="button" class="btn btn-info">Créer un Article</button></a>
       {% endif %} 
     <br/><br/>
        <!--blog post-->
@@ -26,6 +26,7 @@
           <img src="{{ post.post_image.url }}" alt="mon_image" class="img-fluid">
           
           <h3>{{ post.title }}</h3>
+          <p>{{ post.text }}</p>
           <div class="blog-metas">
             <div class="blog-meta author">
               <div class="post-author set-bg" data-setbg="/media/{{ post.author.profile.profile_pic }}"></div>
@@ -39,9 +40,9 @@
               <strong>Categorie :</strong>  <a href="{% url 'blogs:same_categorie_list' post.categorie %}">{{ post.categorie }}</a>
           </div>
         </div>
-        <p>{{ post.snippet|safe }} </p>
+        <a href="{% url 'blogs:post_detail' post.id %}">{{ post.snippet|safe }}</a>
           
-          <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Read More</a>
+         
          {% if request.user.is_authenticated %}
          {% if request.user.profile.is_teacher == True %}
           {% if user.id == post.author.id %}

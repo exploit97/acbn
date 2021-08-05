@@ -32,17 +32,17 @@ def devis(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         email_content = request.POST.get('email_content')
-        adress = request.POST.get('adress')
+       
         message = email_content
         send_mail(
-            'cfqhse <no_reply>',
+            'ACBN <no_reply>',
             'Cher '+' '+ name + 'nous avons recu votre message, nous vous donnerons une suite tres bientot.',
             'yvindjhonnelmahoukou@gmail.com',
             [email],
             fail_silently=False,
         )
         send_mail(
-            'cfqhse, Une personne au nom de : ' + name + ' '+ email + 'vous a écris ce message ci-dessous .',
+            'ACBN, Une personne au nom de : ' + name + ' '+ email + 'vous a écris ce message ci-dessous .',
             message,
             'yvindjhonnelmahoukou@gmail.com',
             ['yvindjhonnelmahoukou@gmail.com'],
@@ -95,7 +95,7 @@ def etudesListView(request):
     context = {
                 'posts':posts }
        
-    return render(request,'etudes.html',context)
+    return render(request,'blog/etudes.html',context)
 
 class PostDetailView(DetailView):
     model = Post
@@ -153,14 +153,17 @@ class AddPartnerView(CreateView):
             
 def delete_post(request, id):
     Post(id = id).delete()
+    messages.success(request, f'suppression reuissie.')
     return redirect('blogs:post_list')
 
 def delete_doc(request, id):
     Documents(id = id).delete()
+    messages.success(request, f'suppression reuissie.')
     return redirect('blogs:documents')
 
 def delete_partner(request, id):
     Partner(id = id).delete()
+    messages.success(request, f'suppression reuissie.')
     return redirect('blogs:partners')
 
 class UpdatePostView(UpdateView):

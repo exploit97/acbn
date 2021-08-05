@@ -9,19 +9,21 @@
 <div id="overviews" class="section wb">
     <div class="container">
         <div class="row"> 
-            <div class="col social_style col-lg-12">
-                <div style="justify-content: center; " >
-                  <ul class="social-icons" >
-                    <li><a  href="{%url 'blogs:about'%}" target="_blank" >Une association à but non lucratif des cadres,d'étudiants et de professionnels mobilisés autour d'une idéologie commune,celle de contribuer au bien-être des autres par l'action humanitaire</a></li>
-                   
-                   
-                
-                  </ul></div>
-                 
-              </div>
+           
 
-            <div class="col-lg-12">
-<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" style="height: 30%;">
+            
+                <div class="col-12 social_style">
+                    <div  >
+                      <ul>
+                        <li><a  href="{%url 'blogs:about'%}" target="_blank" >Une association à but non lucratif des cadres,d'étudiants et de professionnels mobilisés autour d'une idéologie commune,celle de contribuer au bien-être des autres par l'action humanitaire</a></li>
+                       
+                       
+                    
+                      </ul></div>
+                     
+                  </div>
+                  
+<div id="carouselExampleControls" class="col-12 carousel slide bs-slider box-slider" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
@@ -35,7 +37,7 @@
         
         <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
            
-            <div id="home" class="first-section" style="background-image:url({{post.post_image.url }}); ">
+            <div id="home" class="first-section" style="background-image:url({{post.post_image.url }}); height: 320px;">
               
                 <div class="dtab">
                     <div class="container">
@@ -58,50 +60,6 @@
         {% endfor %}
 {% else %}
 
-
-
-
-        <div class="carousel-item active">
-            <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-1.jpg' %});">
-                <div class="dtab">
-                    <div class="container">
-                        <div class="row">
-                         
-
-                            <div class="col-md-12 col-sm-12 text-right">
-                                <div class="big-tagline">
-                                   
-                                    <h2><strong>ACBN </strong> Une association à but non lucratif</h2>
-                                    <p class="lead">Nous disposons d'une gamme des épreuves corrigeés des examens et concours. </p>
-                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </div><!-- end row -->            
-                    </div><!-- end container -->
-                </div>
-            </div><!-- end section -->
-        </div>
-        <div class="carousel-item">
-            <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-2.jpg' %});">
-                <div class="dtab">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 text-left">
-                                <div class="big-tagline">
-                                    <h2 data-animation="animated zoomInRight">Schooli <strong>Plateforme d'éducation</strong></h2>
-                                    <p class="lead" data-animation="animated fadeInLeft">Nous disposons d'une gamme des épreuves corrigeés des examens et concours.. </p>
-                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </div><!-- end row -->            
-                    </div><!-- end container -->
-                </div>
-            </div><!-- end section -->
-        </div>
         <div class="carousel-item">
             <div id="home" class="first-section" style="background-image:url({% static 'schooli/images/slide-3.jpg' %}); ">
                 <div class="dtab">
@@ -109,11 +67,9 @@
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
                                 <div class="big-tagline">
-                                    <h2 data-animation="animated zoomInRight"><strong>VPS Servers</strong> Company</h2>
-                                    <p class="lead" data-animation="animated fadeInLeft">Nous disposons d'une gamme des épreuves corrigeés des examens et concours.</p>
-                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                    <h2>ACBN, NOtre communauté</h2>
+                                    <p class="lead" data-animation="animated fadeInLeft">Nous sommes une Communauté dynamique, composé d'hommes et de femmes forts.</p>
+                                        
                                 </div>
                             </div>
                         </div><!-- end row -->            
@@ -136,22 +92,22 @@
         </a>
     </div>
 </div>
-<div class="col social_style col-lg-12">
+<div class="col-12 social_style" style="text-align: right; ">
     <div style="justify-content: center; " >
       <ul class="social-icons" >
-        <li><a  href="{%url 'blogs:activite'%}" target="_blank" >Découvrez de nombreuses activités des Congolais au Niger</a></li>
+        <li ><a  href="{%url 'blogs:activite'%}" target="_blank" >Découvrez de nombreuses activités des Congolais au Niger</a></li>
        
        
     
       </ul></div>
      
   </div>
+            
 
-<div id="overviews" class="section wb">
-    <div class="container" id="about">
+        </div>
        
     
-        <div class="row align-items-center">
+        <div class="row align-items-center" id="about">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="message-box">
                    
@@ -173,7 +129,7 @@
 
                  
 
-                    <a href="#" class="hover-btn-new orange"><span>Lire</span></a>
+                    <a href="{%url 'blogs:about'%}" class="hover-btn-new orange"><span>Lire</span></a>
                 </div><!-- end messagebox -->
             </div><!-- end col -->
             
@@ -182,7 +138,7 @@
                     <img src="{% static 'schooli/images/acbn1.jpg' %}" alt="" class="img-fluid img-rounded">
                 </div><!-- end media -->
             </div><!-- end col -->
-        </div>
+        </div> <!-- end row -->
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="post-media wow fadeIn">
@@ -198,19 +154,12 @@
                     </p>
 
                     <p> Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk Lorem ipsum lorem ipsum lorel ndshsk .</p>
-                    <a href="#" class="hover-btn-new orange"><span>Lire</span></a>
+                    <a href="{%url 'blogs:activite'%}" class="hover-btn-new orange"><span>Lire</span></a>
                 </div><!-- end messagebox -->
             </div><!-- end col -->
             
         </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end section -->
-
-
-</div>
-
-      
-        </div><!-- end row -->
+  
     </div><!-- end container -->
 </div><!-- end section -->
 {% endblock %}

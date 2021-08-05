@@ -24,9 +24,9 @@
         {% for post in partners %}
         <div class="col-lg-4 blog-post">
       
-         
+          {% if post.image %}
           <img src="{{ post.image.url }}" alt="mon_image" class="img-fluid">
-          
+          {% endif %}
           <h3>{{ post.name }}</h3>
          
           

@@ -29,10 +29,10 @@
             <img src="{{post.post_image.url }}" style="height: 200px; width: 350px;"/>
             {% endif %}
           <h3>{{ post.title }}</h3>
-          <h3>{{ post.text|truncatewords:10 }}</h3>
+          <p>{{ post.text|truncatewords:10|capfirst|safe }}</p>
        
           
-          <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Read More</a>
+          <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Lire</a>
          {% if request.user.is_authenticated %}
          {% if request.user.profile.is_teacher == True %}
           {% if user.id == post.author.id %}
