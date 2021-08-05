@@ -33,7 +33,12 @@ DEBUG = True
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
     
-    
+    CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'df3wvqywx',
+             'API_KEY': '634761716724664',
+             'API_SECRET': 'h1uHjfWn6Wppm548CWjhXGLAjx8'
+            }
+    DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
@@ -168,15 +173,11 @@ STATICFILES_DIRS = [
 
 
 
-CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'df3wvqywx',
-             'API_KEY': '634761716724664',
-             'API_SECRET': 'h1uHjfWn6Wppm548CWjhXGLAjx8'
-            }
+
     
 MEDIA_URL = '/media/'  # or any prefix you choose
      
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

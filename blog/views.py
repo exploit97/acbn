@@ -42,7 +42,7 @@ def devis(request):
             fail_silently=False,
         )
         send_mail(
-            'ACBN, Une personne au nom de : ' + name + ' '+ email + 'vous a écris ce message ci-dessous .',
+            'Requete du site de ACBN',
             message,
             'yvindjhonnelmahoukou@gmail.com',
             ['yvindjhonnelmahoukou@gmail.com'],
