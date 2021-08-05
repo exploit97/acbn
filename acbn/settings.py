@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import cloudinary
+import cloudinary_storage
 from pathlib import Path
 import os
 import dj_database_url
@@ -71,6 +72,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'allauth.account',
     'allauth.socialaccount',
+    # Media Cloudinary
+    'cloudinary',
+    'cloudinary_storage',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -164,7 +168,15 @@ STATICFILES_DIRS = [
 
 
 
-MEDIA_URL = '/media/'
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'df3wvqywx',
+             'API_KEY': '634761716724664',
+             'API_SECRET': 'h1uHjfWn6Wppm548CWjhXGLAjx8'
+            }
+    
+MEDIA_URL = '/media/'  # or any prefix you choose
+     
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
