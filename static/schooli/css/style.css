@@ -740,7 +740,7 @@ a img.aligncenter {
 	background: blue;
 	position: absolute;
 	left: 0px;
-	font-size: 38px;
+	font-size: 24px;
 	top: 40%;
 	width: 60px;
 	height: 60px;
@@ -748,14 +748,14 @@ a img.aligncenter {
 	opacity: 1;
 }
 .box-slider .carousel-control-next{
-	border-radius: 2px;
+	border-radius: 1px;
 	background: blue;
 	position: absolute;
 	right: 0px;
-	font-size: 38px;
+	font-size: 24px;
 	top: 40%;
 	width: 60px;
-	height: 60px;
+	height: 30px;
 	line-height: 20px;
 	opacity: 1;
 }
