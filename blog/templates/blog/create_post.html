@@ -9,7 +9,7 @@
     {% if request.user.profile.is_teacher == True %}
         <h1>Créer un post</h1>
         </div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}

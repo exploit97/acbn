@@ -7,7 +7,7 @@
     <div class="text-center">
         <h1>Ajouter un Commentaire</h1>
     </div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="site-btn">Valider</button>
