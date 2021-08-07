@@ -24,10 +24,10 @@
             </div>
           </div>
           <p>{{ post.text|capfirst|safe }} </p>
-          <a href="{% url 'blogs:post_list' %}" class="btn btn-dark">Liste des Articles</a>
+          <a href="{% url 'blogs:post_list' %}" class="btn btn-success">Liste des Articles</a>
           {% if post.author == request.user %}
           <a href="{% url 'blogs:delete_post' post.id %}" class="btn btn-danger">Supprimer le message</a>
-
+          <a href="{% url 'blogs:update_post' post.id %}" class="btn btn-info">Mettre à jour</a>
           {% endif %}
         <br>
 
