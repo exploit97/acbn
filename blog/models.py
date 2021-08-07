@@ -26,16 +26,6 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name ='blog_posts')
     snippet = models.CharField(max_length=255, default='Lire')
 
-    
-    """def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-        img = Image.open(self.post_image.path)
-        
-        output_size = (200,200)
-        img.thumbnail(output_size)
-        img.save(self.post_image.path) """
-
     def get_absolute_url(self):
         return reverse("blogs:post_detail", kwargs={"pk": self.pk})
 
