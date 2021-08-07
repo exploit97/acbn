@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     bio = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(default='media/default.png', upload_to = 'profile_pics')
-    is_teacher = models.BooleanField('est_du_bureau',default=False)
+    is_teacher = models.BooleanField(default=False)
     website_url = models.CharField(max_length=255, blank=True, null=True)
     facebook_url = models.CharField(max_length=255, blank=True, null=True)
     instagram_url = models.CharField(max_length=255, blank=True, null=True)
@@ -27,13 +27,3 @@ class Profile(models.Model):
             img.thumbnail(output_size)
             img.save(self.profile_pic.path)
 
-
-class Demandes(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
-    phone_number = models.CharField(max_length=15)
-
-
-    def __str__(self):
-        return self.profile.user.username
