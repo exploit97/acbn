@@ -33,12 +33,7 @@ DEBUG = True
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
     
-    CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'df3wvqywx',
-             'API_KEY': '634761716724664',
-             'API_SECRET': 'h1uHjfWn6Wppm548CWjhXGLAjx8'
-            }
-    DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+   
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
@@ -59,7 +54,12 @@ else:
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','acbnassoc.herokuapp.com']
 
-
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'df3wvqywx',
+             'API_KEY': '634761716724664',
+             'API_SECRET': 'h1uHjfWn6Wppm548CWjhXGLAjx8'
+            }
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 # Application definition
 
 INSTALLED_APPS = [
