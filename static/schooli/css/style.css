@@ -89,11 +89,11 @@ h6 {
 }
 
 h1 {
-    font-size: 24px
+    font-size: 22px
 }
 
 h2 {
-    font-size: 22px
+    font-size: 20px
 }
 
 h3 {
@@ -721,13 +721,7 @@ a img.aligncenter {
     margin-top: 4px;
 }
 
-.navbar-toggler:hover{
-	background:blue;
-}
 
-.navbar-toggler:hover .icon-bar{
-	background: #ffffff;
-}
 
 
 .box-slider{
@@ -736,11 +730,11 @@ a img.aligncenter {
 
 
 .box-slider .carousel-control-prev{
-	border-radius: 2px;
-	background: blue;
+	
+	
 	position: absolute;
 	left: 0px;
-	font-size: 24px;
+	font-size: 38px;
 	top: 40%;
 	width: 60px;
 	height: 60px;
@@ -748,14 +742,14 @@ a img.aligncenter {
 	opacity: 1;
 }
 .box-slider .carousel-control-next{
-	border-radius: 1px;
-	background: blue;
+	
+	
 	position: absolute;
 	right: 0px;
-	font-size: 24px;
+	font-size: 38px;
 	top: 40%;
 	width: 60px;
-	height: 30px;
+	height: 60px;
 	line-height: 20px;
 	opacity: 1;
 }
@@ -770,56 +764,7 @@ a img.aligncenter {
 }
 
 
-.big-tagline a,
-.big-tagline a.hover-btn-new::after {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
 
-.big-tagline a.hover-btn-new::before,
-.big-tagline a.hover-btn-new::after {
-  background: #fff;
-  content: '';
-  position: absolute;
-  z-index: 1;
-}
-
-.big-tagline a.hover-btn-new:hover span {
-  color:blue;
-}
-
-.hover-btn-new::before {
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-
-.hover-btn-new::after {
-  background: #eea412 !important;
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-.hover-btn-new span{
-	position: relative;
-	z-index: 2;
-}
-
-.hover-btn-new:hover:after {
-  height: 0;
-  left: 50%;
-  top: 50%;
-  width: 0;
-}
-
-
-.first-section .big-tagline a:hover{
-	color: #333333;
-}
 .box-slider .carousel-inner{
 	height: 100%;
 }
@@ -930,47 +875,16 @@ a img.aligncenter {
 	border-color: blue;
 }
 
-.first-section {
-    position: relative;
-    overflow: hidden;
-    height: 100%;	
-	vertical-align: middle;
-}
 
-.first-section::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-	top: 0px;
-	left: 0px;
-    display: block;
-    background: rgba(0,0,0,0.5);
-}
 
-.first-section h2 {
+
+
+.first-ly h2 {
     color: #ffffff;
-    font-size: 68px;
-    font-weight: 300;
-    text-transform: capitalize;
-    display: block;
-    margin: 0;
-    padding: 0 0 30px;
-    position: relative;
+    font-size: 38px;"
+  
 }
 
-.first-section h2 strong{
-	color: blue;
-}
-
-.first-section .lead {
-    font-size: 21px;
-    font-weight: 300;
-    padding: 0 0 40px;
-    margin: 0;
-    line-height: inherit;
-    color: blue;
-}
 
 .macbookright {
     width: 980px;

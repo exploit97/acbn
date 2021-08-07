@@ -115,6 +115,7 @@ class PostDetailView(DetailView):
         context['Liked'] = Liked
         return context 
 
+
 class CreatePostView(CreateView):
     model = Post
     template_name = 'blog/create_post.html'

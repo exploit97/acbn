@@ -8,81 +8,52 @@
 
 <div id="overviews" class="section wb">
     <div class="container">
-        <div class="row"> 
-           
-
-            
-                <div class="col-12 social_style">
-                    <div  >
-                      <ul>
-                        <li><a  href="{%url 'blogs:about'%}" target="_blank" >Une association à but non lucratif des cadres,d'étudiants et de professionnels mobilisés autour d'une idéologie commune,celle de contribuer au bien-être des autres par l'action humanitaire</a></li>
-                       
-                       
-                    
-                      </ul></div>
-                     
-                  </div>
-                  </div>
+       
      <div class="row">
          <div class="col">
             <div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleControls" data-slide-to="2"></li>
                 </ol>
+              
+                <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-            
                     {% if posts %}
                     {% for post in posts %}
-                    
-                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                       
-             
-                            <img src="{{post.post_image.url }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                                <h1>{{ post.title }}</h1>
-                                                <a href="{% url 'blogs:post_detail' post.id %}"><p class="lead">{{post.snippet|truncatewords:100}} </p></a>
-                                            </div>    
-                           
-            
+        
+                  <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                    <img src="{{ post.post_image.url }}" class=" w-100" alt="">
+                    <div class="carousel-caption first-ly" >
+                      <h2 >{{ post.title }}</h2>
+                      <a href="{% url 'blogs:post_detail' post.id %}"><p class="btn btn-info">{{post.snippet|truncatewords:5}} </p></a>
                     </div>
-                    {% endfor %}
-           
-                    {% endif %}
-            
-                    <!-- Left Control -->
-                    <a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="fa fa-angle-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-            
-                    <!-- Right Control -->
-                    <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="fa fa-angle-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                  </div>
+              
+                 
+                  {% endfor %}
+                  {% endif %}
                 </div>
-            </div>
-         </div>
+              
+                <!-- Left and right controls -->
+                <a class="left carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
+                  <span class="fa fa-angle-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control-next" href="#carouselExampleControls" data-slide="next">
+                  <span class="fa fa-angle-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+         
      </div>             
-<div class="row">
-<div class="col-12 social_style" style="text-align: right; ">
-    <div style="justify-content: center; " >
-      <ul class="social-icons" >
-        <li ><a  href="{%url 'blogs:activite'%}" target="_blank" >Découvrez de nombreuses activités des Congolais au Niger</a></li>
-       
-       
-    
-      </ul></div>
-     
-  </div>
-            
-
-        </div>
-       
-    
+     </div>
+    </div><!-- end container -->
+</div><!-- end section -->
+     <div id="overviews" class="section wb">
+        <div class="container">
         <div class="row align-items-center" id="about">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="message-box">

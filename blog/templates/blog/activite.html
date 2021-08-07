@@ -29,7 +29,7 @@
             <img src="{{post.post_image.url }}" style="height: 200px; width: 350px;"/>
             {% endif %}
           <h3>{{ post.title }}</h3>
-          <p>{{ post.text|truncatewords:10|capfirst|safe }}</p>
+          <p>{{ post.text|truncatewords:30|capfirst|safe }}</p>
        
           
           <a href="{% url 'blogs:post_detail' post.id %}" class="btn btn-primary">Lire</a>
@@ -45,7 +45,7 @@
         {% endfor %}
         {% else %} 
 
-<p>Aucun document, désolé!!!</p>
+<p>Aucune Activité, désolé!!!</p>
         {% endif %}
     
      

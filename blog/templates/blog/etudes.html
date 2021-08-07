@@ -9,19 +9,20 @@
 <section id="overviews" class="section wb">
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9">
+  
      {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
      
     <a href="{% url 'blogs:create_post' %}"><button type="button" class="btn btn-info">Créer un Article sur les études</button></a>
       {% endif %} 
     <br/><br/>
        <!--blog post-->
+       <div class="row">
+       
     {% if posts %}
   
         {% for post in posts %}
       
-        <div class="blog-post">
+        <div class="col-lg-4 blog-post">
          
           <img src="{{ post.post_image.url }}" alt="mon_image" class="img-fluid" style="height: 200px; width: 350px;">
           

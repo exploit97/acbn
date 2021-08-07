@@ -24,7 +24,7 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now= True)
     categorie =models.ForeignKey(Categorie, on_delete = models.CASCADE, null=True, blank = True)
     likes = models.ManyToManyField(User, related_name ='blog_posts')
-    snippet = models.CharField(max_length=255, default='cliquez les lignes ci-dessus pour lire l\'article')
+    snippet = models.CharField(max_length=255, default='Lire')
 
     
     """def save(self, *args, **kwargs):

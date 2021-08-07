@@ -9,38 +9,36 @@
 <section id="overviews" class="section wb">
 
   <div class="container">
-    <div class="row">
-      <div class="col-12">
+   
      {% if request.user.is_authenticated and request.user.profile.is_teacher == True %}
      
     <a href="{% url 'blogs:create_post' %}"><button type="button" class="btn btn-info">Créer un Article</button></a>
       {% endif %} 
     <br/><br/>
        <!--blog post-->
+       <div class="row">
+       
     {% if posts %}
   
         {% for post in posts %}
       
-        <div class="blog-post">
+        <div class="col-lg-4 blog-post"> 
          
           <img src="{{ post.post_image.url }}" alt="mon_image" class="img-fluid">
           
           <h3>{{ post.title }}</h3>
-          <p>{{ post.text }}</p>
+          <p>{{ post.text|truncatewords:30|capfirst|safe }}</p>
           <div class="blog-metas">
             <div class="blog-meta author">
               <div class="post-author set-bg" data-setbg="/media/{{ post.author.profile.profile_pic }}"></div>
               <a href="#">{{ post.author|capfirst }}</a>
             </div>
-            <div class="blog-meta">
-              <a href="#">{{ post.created_date }}</a>
-              
-            </div>
+            
             <div>
               <strong>Categorie :</strong>  <a href="{% url 'blogs:same_categorie_list' post.categorie %}">{{ post.categorie }}</a>
           </div>
         </div>
-        <a href="{% url 'blogs:post_detail' post.id %}">{{ post.snippet|safe }}</a>
+        <a href="{% url 'blogs:post_detail' post.id %} " class="btn btn-primary">{{ post.snippet|safe }}</a>
           
          
          {% if request.user.is_authenticated %}
