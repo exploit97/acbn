@@ -3,10 +3,17 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from PIL import Image
+import cloudinary
 
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
-
+cloudinary.config( 
+  secure=True,
+  cloud_name = 'CLOUD_NAME', 
+  api_key = 'API_KEY', 
+  api_secret = 'API_SECRET' 
+)
 class Categorie(models.Model):
      name = models.CharField(max_length=255)
 
@@ -19,7 +26,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     #text = models.TextField()
     text = RichTextField(blank=True, null=True)
-    post_image = models.ImageField(upload_to='image/',default='media/blog.jpg')
+    post_image = CloudinaryField('image',default='media/blog.jpg')
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now= True)
     categorie =models.ForeignKey(Categorie, on_delete = models.CASCADE, null=True, blank = True)
@@ -49,7 +56,7 @@ class Comment(models.Model):
 class Partner(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='image/',default='media/blog.jpg')
+    image = CloudinaryField('image',default='media/blog.jpg')
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now= True)
 
