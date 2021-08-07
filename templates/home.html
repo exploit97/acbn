@@ -25,7 +25,7 @@
                     {% for post in posts %}
         
                   <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                    <img src="{% static 'schooli/images/acbn1.jpg' %}" class=" w-100" alt="">
+                    <img src="{{ post.post_image.url }}" class=" w-100" alt="">
                     <div class="carousel-caption first-ly" >
                       <h2 >{{ post.title }}</h2>
                       <a href="{% url 'blogs:post_detail' post.id %}"><p class="btn btn-info">{{post.snippet|truncatewords:5}} </p></a>
